@@ -33,5 +33,5 @@ jobs:
     - name: Build And Push Docker Image
       run: |
         echo ${{ secrets.DOCKER_TOKEN }} | docker login -u nikosnikolaidis --password-stdin
-        docker build -t nikosnikolaidis/test_accenture2:$(date +'%Y-%m-%d') .
+        docker build -t nikosnikolaidis/test_accenture2:$(date +'%Y-%m-%d') ./backend/.
         docker push nikosnikolaidis/test_accenture2:$(date +'%Y-%m-%d')
